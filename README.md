@@ -5,15 +5,15 @@ instructions for LLM-assisted editing. Each file is a complete document: no
 custom class, shared style file, bibliography, image, or build configuration
 is required.
 
-| File | Layout |
-| --- | --- |
-| [`single-column.tex`](single-column.tex) | One column throughout, with an inline title and abstract. |
-| [`double-column.tex`](double-column.tex) | Full-width title and abstract above a two-column body. |
+| Source | PDF preview | Layout |
+| --- | --- | --- |
+| [`single-column.tex`](single-column.tex) | [View PDF](single-column.pdf) | One column throughout, with an inline title and abstract. |
+| [`double-column.tex`](double-column.tex) | [View PDF](double-column.pdf) | Full-width title and abstract above a two-column body. |
 
 Both include a linked footnote, an asset-free figure placeholder, a wrapping
 table, a list, and back matter. All sample prose is filler, not research.
 The two files intentionally repeat their shared styling so either can be used
-independently.
+independently. The PDF previews use the enabled Palatino font.
 
 ## Build
 
@@ -29,7 +29,9 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build double-column
 ```
 
 The corresponding PDF and auxiliary files go in `build/`. No `.latexmkrc`
-is needed. Keep generated files out of source commits.
+is needed. To refresh a committed preview after editing a template, copy its
+PDF from `build/` to the repository root and commit it alongside the source.
+Keep `build/` and auxiliary files out of commits.
 
 Without `latexmk`, run pdfLaTeX twice (substitute the other filename as needed):
 
