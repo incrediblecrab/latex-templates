@@ -1,0 +1,266 @@
+% Single-column research paper. Compile with pdfLaTeX; see README.md.
+%
+% LLM EDITING NOTES
+% Preserve the preamble and layout unless a formatting change is requested.
+% Replace the metadata, every \lipsum call, Latin labels, and example.com URL.
+% Filler is not evidence: use supplied facts and verified sources, not invented
+% citations, figures, affiliations, or disclosures.
+% Keep this file self-contained. The figure below needs no external image.
+% Escape text-mode special characters: \& \% \$ \# \_ \{ \}.
+% Use blank lines for paragraphs, not \\; use \label and \ref for numbering.
+
+\documentclass[11pt]{article}
+
+% EDIT: Short, descriptive title in "Subject: Finding" form (at most 55
+% characters). Keep metadata plain text, with LaTeX escapes where necessary.
+% The same commands populate the visible title block and PDF metadata.
+\newcommand{\PaperTitle}{Lorem ipsum: Dolor sit amet}
+\newcommand{\PaperAuthor}{Lorem Ipsum}
+\newcommand{\PaperDate}{Month Year}
+\newcommand{\PaperKeywords}{lorem, ipsum, dolor, sit amet, consectetur}
+\newcommand{\PaperAbstract}{%
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+  ut aliquip ex ea commodo consequat.%
+}
+
+% FONT: Choose LaTeX default (Computer Modern) OR Palatino.
+% Palatino is enabled below. Comment out \usepackage{mathpazo} to use the
+% default text and math fonts; leave the encoding and language packages alone.
+% Neither choice needs system fonts or a different compilation engine.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage[
+  letterpaper,
+  margin=0.5in,
+  bottom=0.75in,
+  footskip=0.3in
+]{geometry}
+
+% Keep spacing proportional to the font. Do not shrink type or add negative
+% vertical space to force a page count; edit content or float placement first.
+\usepackage[skip=0.5em plus 0.1em]{parskip}
+\renewcommand{\baselinestretch}{1.15}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{1.5em plus 0.5em minus 0.1em}{0.5em plus 0.1em}
+\titlespacing*{\subsection}{0pt}{1em plus 0.25em minus 0.05em}{0.4em plus 0.05em}
+\usepackage{enumitem}
+\setlist{itemsep=0.2em, topsep=0.2em, parsep=0em, partopsep=0pt, leftmargin=1.5em}
+
+% Allow normal hyphenation and bounded line-breaking flexibility. Do not hide
+% overfull-box warnings or set \emergencystretch to \maxdimen.
+\tolerance=200
+\emergencystretch=3em
+\hyphenpenalty=50
+
+\renewcommand{\footnotesize}{\scriptsize}
+\setlength{\footnotesep}{0.3\baselineskip}
+\addtolength{\skip\footins}{0pt plus 2pt}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf, labelsep=period}
+\captionsetup[figure]{name=Fig.}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xurl}
+\usepackage{lipsum}
+
+% Hyperref comes after the other packages. Black links stay clickable.
+% Never put citations or footnotes in metadata or the title/abstract block.
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  allcolors=black,
+  pdftitle={\PaperTitle},
+  pdfauthor={\PaperAuthor},
+  pdfkeywords={\PaperKeywords}
+}
+\urlstyle{same}
+
+% The first page and later pages share a quiet page / total footer.
+% LastPage references require another LaTeX pass; latexmk handles this.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\small\textcolor{gray!60}{\thepage\ / \pageref*{LastPage}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[R]{\small\textcolor{gray!60}{\thepage\ / \pageref*{LastPage}}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\begin{document}
+\thispagestyle{plain}
+
+% Full-width opening on page 1, not a separate cover page.
+% Keep the abstract to three sentences and keywords to four to six terms.
+\begingroup
+\setlength{\parskip}{0pt}
+{\centering
+  \Large\textbf{\PaperTitle}\par
+  \vspace{0.3em}
+  \normalsize\PaperAuthor\par
+  \vspace{0.1em}
+  \PaperDate\par
+}
+\vspace{0.3em}
+\noindent\rule{\textwidth}{0.4pt}\par
+\vspace{1em}
+\noindent\textbf{Abstract.} \PaperAbstract\par
+\vspace{0.5em}
+\noindent\textbf{Keywords:} \PaperKeywords\par
+\vspace{1em}
+\endgroup
+
+% CONTENT: Five-part argument. Introduction and conclusion are unnumbered;
+% the three support sections are numbered and each has two to three
+% subsections. Rename headings in sentence case to fit the actual subject.
+\section*{Introduction}
+
+% Two paragraphs: central tension, then scope and the evaluative framework.
+% Citation pattern: \footnote{\href{URL}{Publisher, Month Day, Year.}}
+% Consolidate same-source facts into a trailing footnote. The URL below is
+% only a placeholder, not a supporting source.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor
+in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+pariatur.\footnote{\href{https://example.com/}{Lorem ipsum.}}
+
+\lipsum[2]
+
+\section{Context \& stakes}
+
+\subsection{Lorem ipsum}
+
+\lipsum[3]
+
+% Use local \linewidth for images and tables, including inside narrower
+% containers. The frame subtracts its border and padding to fit exactly.
+% Replace the entire \fbox with the following only after adding a real file:
+% \includegraphics[width=\linewidth]{figure.pdf}
+% Do not add a fake data chart. A real figure needs a stated argument,
+% comparable scales/conditions, units, source, and relevant limitations.
+\begin{figure}[tbp]
+  \centering
+  \fbox{%
+    \begin{minipage}[c][1.2in][c]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+      \centering
+      \textcolor{gray}{\textit{Lorem ipsum dolor sit amet.}}
+    \end{minipage}%
+  }
+  \caption{Lorem ipsum dolor sit amet.}
+  \label{fig:example}
+\end{figure}
+
+Lorem ipsum dolor sit amet (Fig.~\ref{fig:example}).
+
+\subsection{Dolor sit amet}
+
+\lipsum[4]
+
+\section{Core analysis}
+
+\subsection{Consectetur adipiscing}
+
+\lipsum[5]
+
+% Table captions go above the table; figure captions go below the figure.
+% Put \label AFTER \caption so \ref receives the right counter.
+% X columns wrap text to fit; avoid scaling an oversized table into tiny type.
+% Use a note below a table for its sources, not \footnote inside tabularx.
+\begin{table}[tbp]
+  \centering
+  \caption{Lorem ipsum dolor sit amet.}
+  \label{tab:example}
+  \small
+  \begin{tabularx}{\linewidth}{@{}
+    >{\raggedright\arraybackslash}X
+    >{\raggedright\arraybackslash}X
+    >{\raggedright\arraybackslash}X@{}}
+    \toprule
+    \textbf{Lorem} & \textbf{Ipsum} & \textbf{Dolor} \\
+    \midrule
+    Sit amet & Consectetur & Adipiscing \\
+    Sed do & Eiusmod & Tempor \\
+    Ut labore & Dolore & Magna aliqua \\
+    \bottomrule
+  \end{tabularx}
+  \par\smallskip
+  {\scriptsize\textit{Lorem ipsum dolor sit amet.}\par}
+\end{table}
+
+Lorem ipsum dolor sit amet (Table~\ref{tab:example}).
+
+\subsection{Sed do eiusmod}
+
+\lipsum[6]
+
+% These items demonstrate list spacing; replace or remove them as needed.
+\begin{itemize}
+  \item Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  \item Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+\end{itemize}
+
+\section{Implications}
+
+\subsection{Tempor incididunt}
+
+\lipsum[7]
+
+\subsection{Ut labore et dolore}
+
+\lipsum[8]
+
+\section*{Conclusion}
+
+% Two paragraphs: resolve the introduction, then state a falsifiable test
+% and the observations that would change the conclusion.
+\lipsum[9-10]
+
+% BACK MATTER: \clearpage flushes pending figures/tables before the appendix.
+% Do not scatter forced page breaks through the body to fit the filler.
+\clearpage
+\section*{Appendix: Glossary \& context}
+
+\subsection*{Key terms}
+
+\textbf{Lorem ipsum.} Dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+\textbf{Ut enim.} Ad minim veniam, quis nostrud exercitation ullamco laboris
+nisi ut aliquip ex ea commodo consequat.
+
+\subsection*{Key players}
+
+\textbf{Dolor sit amet.} Consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+\section*{About}
+
+% Replace with actual authorship, method, and tools, not inferred credentials.
+\textbf{Overview.} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+\textbf{Methodology.} Sed do eiusmod tempor incididunt ut labore et dolore
+magna aliqua.
+
+\textbf{Tools.} Ut enim ad minim veniam, quis nostrud exercitation ullamco
+laboris nisi ut aliquip ex ea commodo consequat.
+
+\section*{Disclosure}
+
+% Filler is not a legal disclaimer. State only disclosures the author has
+% confirmed; do not invent claims about compensation or conflicts of interest.
+\lipsum[11]
+
+\end{document}
