@@ -1,0 +1,26 @@
+# LaTeX build output.
+#
+# The rendered PDFs at the repository root are tracked on purpose — someone
+# browsing the templates should be able to see the result without installing
+# a TeX distribution. So there is deliberately no `*.pdf` rule here.
+#
+# Everything below is regenerable by `latexmk`.
+
+build/
+
+# latexmk and pdflatex intermediates
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+*.xdv
