@@ -3,31 +3,25 @@
 % LLM EDITING NOTES
 % Preserve the preamble and layout unless a formatting change is requested.
 % Replace the metadata, every \lipsum call, Latin labels, and example.com URL.
-% Filler is not evidence: use supplied facts and verified sources, not invented
-% citations, figures, affiliations, or disclosures.
+% Filler is not evidence: use supplied facts and verified sources, not invented citations, figures, affiliations, or disclosures.
 % Keep this file self-contained. The figure below needs no external image.
 % Escape text-mode special characters: \& \% \$ \# \_ \{ \}.
 % Use blank lines for paragraphs, not \\; use \label and \ref for numbering.
 
 \documentclass[11pt]{article}
 
-% EDIT: Short, descriptive title in "Subject: Finding" form (at most 55
-% characters). Keep metadata plain text, with LaTeX escapes where necessary.
+% EDIT: Short, descriptive title in "Subject: Finding" form (at most 55 characters). Keep metadata plain text, with LaTeX escapes where necessary.
 % The same commands populate the visible title block and PDF metadata.
 \newcommand{\PaperTitle}{Lorem ipsum: Dolor sit amet}
 \newcommand{\PaperAuthor}{Lorem Ipsum}
 \newcommand{\PaperDate}{Month Year}
 \newcommand{\PaperKeywords}{lorem, ipsum, dolor, sit amet, consectetur}
 \newcommand{\PaperAbstract}{%
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-  ut aliquip ex ea commodo consequat.%
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.%
 }
 
 % FONT: Choose LaTeX default (Computer Modern) OR Palatino.
-% Palatino is enabled below. Comment out \usepackage{mathpazo} to use the
-% default text and math fonts; leave the encoding and language packages alone.
+% Palatino is enabled below. Comment out \usepackage{mathpazo} to use the default text and math fonts; leave the encoding and language packages alone.
 % Neither choice needs system fonts or a different compilation engine.
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -41,8 +35,7 @@
   footskip=0.3in
 ]{geometry}
 
-% Keep spacing proportional to the font. Do not shrink type or add negative
-% vertical space to force a page count; edit content or float placement first.
+% Keep spacing proportional to the font. Do not shrink type or add negative vertical space to force a page count; edit content or float placement first.
 \usepackage[skip=0.5em plus 0.1em]{parskip}
 \renewcommand{\baselinestretch}{1.15}
 \usepackage{titlesec}
@@ -51,8 +44,7 @@
 \usepackage{enumitem}
 \setlist{itemsep=0.2em, topsep=0.2em, parsep=0em, partopsep=0pt, leftmargin=1.5em}
 
-% Allow normal hyphenation and bounded line-breaking flexibility. Do not hide
-% overfull-box warnings or set \emergencystretch to \maxdimen.
+% Allow normal hyphenation and bounded line-breaking flexibility. Do not hide overfull-box warnings or set \emergencystretch to \maxdimen.
 \tolerance=200
 \emergencystretch=3em
 \hyphenpenalty=50
@@ -125,19 +117,13 @@
 \vspace{1em}
 \endgroup
 
-% CONTENT: Five-part argument. Introduction and conclusion are unnumbered;
-% the three support sections are numbered and each has two to three
-% subsections. Rename headings in sentence case to fit the actual subject.
+% CONTENT: Five-part argument. Introduction and conclusion are unnumbered; the three support sections are numbered and each has two to three subsections. Rename headings in sentence case to fit the actual subject.
 \section*{Introduction}
 
 % Two paragraphs: central tension, then scope and the evaluative framework.
 % Citation pattern: \footnote{\href{URL}{Publisher, Month Day, Year.}}
-% Consolidate same-source facts into a trailing footnote. The URL below is
-% only a placeholder, not a supporting source.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor
-in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur.\footnote{\href{https://example.com/}{Lorem ipsum.}}
+% Consolidate same-source facts into a trailing footnote. The URL below is only a placeholder, not a supporting source.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\footnote{\href{https://example.com/}{Lorem ipsum.}}
 
 \lipsum[2]
 
@@ -147,12 +133,10 @@ pariatur.\footnote{\href{https://example.com/}{Lorem ipsum.}}
 
 \lipsum[3]
 
-% Use local \linewidth for images and tables, including inside narrower
-% containers. The frame subtracts its border and padding to fit exactly.
+% Use local \linewidth for images and tables, including inside narrower containers. The frame subtracts its border and padding to fit exactly.
 % Replace the entire \fbox with the following only after adding a real file:
 % \includegraphics[width=\linewidth]{figure.pdf}
-% Do not add a fake data chart. A real figure needs a stated argument,
-% comparable scales/conditions, units, source, and relevant limitations.
+% Do not add a fake data chart. A real figure needs a stated argument, comparable scales/conditions, units, source, and relevant limitations.
 \begin{figure}[tbp]
   \centering
   \fbox{%
@@ -227,8 +211,7 @@ Lorem ipsum dolor sit amet (Table~\ref{tab:example}).
 
 \section*{Conclusion}
 
-% Two paragraphs: resolve the introduction, then state a falsifiable test
-% and the observations that would change the conclusion.
+% Two paragraphs: resolve the introduction, then state a falsifiable test and the observations that would change the conclusion.
 \lipsum[9-10]
 
 % BACK MATTER: \clearpage flushes pending figures/tables before the appendix.
@@ -238,32 +221,26 @@ Lorem ipsum dolor sit amet (Table~\ref{tab:example}).
 
 \subsection*{Key terms}
 
-\textbf{Lorem ipsum.} Dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua.
+\textbf{Lorem ipsum.} Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-\textbf{Ut enim.} Ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat.
+\textbf{Ut enim.} Ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 \subsection*{Key players}
 
-\textbf{Dolor sit amet.} Consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua.
+\textbf{Dolor sit amet.} Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 \section*{About}
 
 % Replace with actual authorship, method, and tools, not inferred credentials.
 \textbf{Overview.} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-\textbf{Methodology.} Sed do eiusmod tempor incididunt ut labore et dolore
-magna aliqua.
+\textbf{Methodology.} Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-\textbf{Tools.} Ut enim ad minim veniam, quis nostrud exercitation ullamco
-laboris nisi ut aliquip ex ea commodo consequat.
+\textbf{Tools.} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 \section*{Disclosure}
 
-% Filler is not a legal disclaimer. State only disclosures the author has
-% confirmed; do not invent claims about compensation or conflicts of interest.
+% Filler is not a legal disclaimer. State only disclosures the author has confirmed; do not invent claims about compensation or conflicts of interest.
 \lipsum[11]
 
 \end{document}
