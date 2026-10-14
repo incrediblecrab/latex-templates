@@ -81,7 +81,7 @@ That URL is a placeholder, not a source. Supply the actual URL, publisher and da
 
 ## Layout and safe changes
 
-The shared style uses 11pt type in the chosen font, US letter paper, 0.5in top and side margins, a 0.75in bottom margin, 1.15 line spacing, unindented paragraphs, compact lists, black hyperlinks and a gray `page / total` footer. The two-column version has a 0.5in gutter. Both start the paper on the title page rather than adding a separate cover sheet.
+The shared style uses 11pt type in the chosen font, US letter paper, 1in margins on every side (arXiv's minimum), 1.15 line spacing, unindented paragraphs, compact lists, black hyperlinks and a gray `page / total` footer. The two-column version has a 0.5in gutter. Both start the paper on the title page rather than adding a separate cover sheet.
 
 The double-column template uses native `\twocolumn[...]`, not `multicols`. Its bracketed opening spans the page; everything after it flows into columns. Do not mix the two column systems or switch to `\onecolumn` just to insert a wide object.
 
