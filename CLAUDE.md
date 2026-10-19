@@ -2,15 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) and GitHub Copilot CLI when working in this repository.
 
-Four standalone pdfLaTeX templates, each with a committed preview PDF: the research papers `single-column.tex` and `double-column.tex`, the Beamer deck `presentation.tex` (with `presentation.pptx`, the same deck in PowerPoint) and the one-page `interview-sprint.tex`. This is the one home for the owner's LaTeX templates, and the repository is public, so templates hold placeholders only, never personal details. Each `.tex` file is self-contained on purpose: the two paper templates repeat their shared styling so either can be copied alone, with no class file, style file, bibliography or image asset. Keep it that way rather than factoring the styling out.
+Two standalone pdfLaTeX templates, each with a committed preview PDF: the research papers `single-column.tex` and `double-column.tex`. This is the one home for the owner's LaTeX templates, and the repository is public, so templates hold placeholders only, never personal details. Each `.tex` file is self-contained on purpose: the two paper templates repeat their shared styling so either can be copied alone, with no class file, style file, bibliography or image asset. Keep it that way rather than factoring the styling out.
 
 ## Commands
 
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build single-column.tex
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build double-column.tex
-latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build presentation.tex
-latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build interview-sprint.tex
 ```
 
 After editing a template, copy its PDF from `build/` to the repository root and commit it with the source so the preview matches; never commit `build/` or auxiliary files. No shell escape, BibTeX or Biber is used.

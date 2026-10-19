@@ -1,8 +1,8 @@
 # latex-templates
 
-This repository provides four standalone LaTeX templates with matching compiled PDF previews: a single-column and a double-column research paper, a Beamer slide deck, and a one-page interview-preparation sheet. It is the one public home for the owner's LaTeX templates, not a package, and each `.tex` file can be copied and edited without any shared class, style file, bibliography or image asset.
+This repository provides two standalone LaTeX templates with matching compiled PDF previews: a single-column and a double-column research paper. It is the one public home for the owner's LaTeX templates, not a package, and each `.tex` file can be copied and edited without any shared class, style file, bibliography or image asset.
 
-**Objective:** give the owner reusable paper, slide and one-page scaffolds that work with pdfLaTeX; the two paper templates include inline instructions for careful LLM-assisted editing.
+**Objective:** give the owner reusable paper scaffolds that work with pdfLaTeX, with inline instructions for careful LLM-assisted editing.
 
 **Inputs:** a current TeX Live, MacTeX or MiKTeX installation with pdfLaTeX; `latexmk` is recommended but not required.
 
@@ -12,13 +12,8 @@ This repository provides four standalone LaTeX templates with matching compiled 
 - [`single-column.pdf`](single-column.pdf): compiled preview of the one-column template
 - [`double-column.tex`](double-column.tex): full-width title and abstract above a two-column body
 - [`double-column.pdf`](double-column.pdf): compiled preview of the two-column template
-- [`presentation.tex`](presentation.tex): Beamer slide deck with a title page, contents, columns, blocks, maths and a closing slide
-- [`presentation.pdf`](presentation.pdf): compiled preview of the slide deck
-- [`presentation.pptx`](presentation.pptx): the same deck as a PowerPoint file, for when slides must be edited outside LaTeX
-- [`interview-sprint.tex`](interview-sprint.tex): one-page, two-column interview-preparation sheet with narrow margins and compact sections
-- [`interview-sprint.pdf`](interview-sprint.pdf): compiled preview of the interview sheet
 
-**Try it:** `latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build single-column.tex` builds the single-column template; substitute `double-column.tex`, `presentation.tex` or `interview-sprint.tex` for the others.
+**Try it:** `latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build single-column.tex` builds the single-column template; substitute `double-column.tex` for the other.
 
 ## Template contents
 
