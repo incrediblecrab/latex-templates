@@ -1,8 +1,8 @@
 # latex-templates
 
-This repository provides two standalone LaTeX research-paper templates, one single-column and one double-column, with matching compiled PDF previews. It is a public template repository, not a package, and each `.tex` file can be copied and edited without any shared class, style file, bibliography or image asset.
+This repository provides four standalone LaTeX templates with matching compiled PDF previews: a single-column and a double-column research paper, a Beamer slide deck, and a one-page interview-preparation sheet. It is the one public home for the owner's LaTeX templates, not a package, and each `.tex` file can be copied and edited without any shared class, style file, bibliography or image asset.
 
-**Objective:** give the owner a reusable paper scaffold that works with pdfLaTeX and includes inline instructions for careful LLM-assisted editing.
+**Objective:** give the owner reusable paper, slide and one-page scaffolds that work with pdfLaTeX; the two paper templates include inline instructions for careful LLM-assisted editing.
 
 **Inputs:** a current TeX Live, MacTeX or MiKTeX installation with pdfLaTeX; `latexmk` is recommended but not required.
 
@@ -12,12 +12,17 @@ This repository provides two standalone LaTeX research-paper templates, one sing
 - [`single-column.pdf`](single-column.pdf): compiled preview of the one-column template
 - [`double-column.tex`](double-column.tex): full-width title and abstract above a two-column body
 - [`double-column.pdf`](double-column.pdf): compiled preview of the two-column template
+- [`presentation.tex`](presentation.tex): Beamer slide deck with a title page, contents, columns, blocks, maths and a closing slide
+- [`presentation.pdf`](presentation.pdf): compiled preview of the slide deck
+- [`presentation.pptx`](presentation.pptx): the same deck as a PowerPoint file, for when slides must be edited outside LaTeX
+- [`interview-sprint.tex`](interview-sprint.tex): one-page, two-column interview-preparation sheet with narrow margins and compact sections
+- [`interview-sprint.pdf`](interview-sprint.pdf): compiled preview of the interview sheet
 
-**Try it:** `latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build single-column.tex` builds the single-column template; substitute `double-column.tex` for the two-column version.
+**Try it:** `latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build single-column.tex` builds the single-column template; substitute `double-column.tex`, `presentation.tex` or `interview-sprint.tex` for the others.
 
 ## Template contents
 
-Both templates include a linked footnote, an asset-free figure placeholder, a wrapping table, a list and back matter. All sample prose is filler, not research. The two files intentionally repeat their shared styling so either can be used independently. The PDF previews use the enabled Palatino font.
+Both paper templates include a linked footnote, an asset-free figure placeholder, a wrapping table, a list and back matter. All sample prose is filler, not research. The two paper files intentionally repeat their shared styling so either can be used independently. Their PDF previews use Computer Modern, the enabled default. The slide deck and interview sheet use placeholder names and lorem ipsum, and keep LaTeX's default Computer Modern faces (the deck in Beamer's sans-serif).
 
 ## Build
 
@@ -42,17 +47,20 @@ pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build single-
 
 If references still request another pass, rerun until they settle. On Overleaf, upload either `.tex` file, select it as the main document and choose pdfLaTeX.
 
-All packages are supplied by standard TeX distributions. Minimal installations may need additional packages; the preamble lists them explicitly. In particular, the templates use `mathpazo` for Palatino, `microtype`, `parskip`, `titlesec`, `enumitem`, `caption`, `booktabs`, `tabularx`, `fancyhdr`, `lastpage`, `xurl` and `lipsum`. No system-font installation, shell escape, BibTeX or Biber is needed.
+All packages are supplied by standard TeX distributions. Minimal installations may need additional packages; each preamble lists them explicitly. In particular, the paper templates use `lmodern` for Computer Modern (`mathpazo` if you switch to Palatino), `microtype`, `parskip`, `titlesec`, `enumitem`, `caption`, `booktabs`, `tabularx`, `fancyhdr`, `lastpage`, `xurl` and `lipsum`. No system-font installation, shell escape, BibTeX or Biber is needed.
 
 ## Font choice
 
-Choose LaTeX default, Computer Modern, or Palatino. Both templates have Palatino enabled. To use the default font instead, comment out this line in the chosen `.tex` file:
+The paper templates use Computer Modern, LaTeX's default typeface, through `lmodern` (Latin Modern, its outline version). With `T1` font encoding, which the templates load, plain Computer Modern falls back to bitmap fonts that look blurry on screen, so keep `lmodern` loaded whenever you use Computer Modern.
+
+Palatino is the alternative, through `mathpazo`, which switches both text and math. To use it, swap the two lines in the chosen `.tex` file:
 
 ```latex
-% \usepackage{mathpazo}
+% \usepackage{lmodern}
+\usepackage{mathpazo}
 ```
 
-Uncomment it to restore Palatino. This switches both text and math fonts; leave the encoding and language packages unchanged. No other font package or compilation engine is needed.
+Swap them back to restore Computer Modern. Leave the encoding and language packages unchanged; no other font package, system font or compilation engine is needed.
 
 ## Use with an LLM
 

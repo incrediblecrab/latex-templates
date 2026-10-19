@@ -12,13 +12,14 @@
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.%
 }
 
-% FONT: Choose LaTeX default (Computer Modern) OR Palatino.
-% Palatino is enabled below. Comment out \usepackage{mathpazo} to use the default text and math fonts; leave the encoding and language packages alone.
+% FONT: Computer Modern, LaTeX's default, is enabled below through lmodern (Latin Modern, its outline version, which T1 encoding needs for sharp PDF text).
+% For Palatino instead, comment out \usepackage{lmodern} and uncomment \usepackage{mathpazo}; it switches text and math together. Leave the encoding and language packages alone.
 % Neither choice needs system fonts or a different compilation engine.
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage{mathpazo}
+\usepackage{lmodern}
+% \usepackage{mathpazo}
 \usepackage{microtype}
 \usepackage[
   letterpaper,
