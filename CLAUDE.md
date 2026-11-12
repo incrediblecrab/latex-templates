@@ -17,4 +17,4 @@ After editing a template, copy its PDF from `build/` to the repository root and 
 
 The templates' inline comments are the instructions an LLM follows when filling one in, so keep them accurate whenever the layout changes. The double-column template uses native `\twocolumn[...]`, never `multicols`, and body floats use `\linewidth`. Citations are linked footnotes, not a bibliography; example URLs and all `\lipsum` text are placeholders. Computer Modern is the default, loaded through `lmodern` because `T1` encoding otherwise falls back to bitmap fonts; Palatino (`mathpazo`) is commented out beside it, and swapping the two lines switches fonts. The `README.md` "Layout and safe changes" table is the reference for supported edits.
 
-This repository is also checked out as the `templates/` submodule of `barycenter-wiki`, which lists these files; a rename or a new template changes what that site shows the next time its submodule is updated.
+This repository is also checked out as the `templates/` submodule of `eli5-work`, which lists these files; a rename or a new template changes what that site shows the next time its submodule is updated.
